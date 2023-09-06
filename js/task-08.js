@@ -2,7 +2,7 @@ const formEl=document.querySelector(".login-form");
 
 formEl.addEventListener('submit', submitFunction);
 function submitFunction(event){
-    // event.preventDefault()
+    event.preventDefault();
 const emailEl=event.currentTarget.elements.email.value;
 const passwordEl=event.currentTarget.elements.password.value;
 if (emailEl===""||passwordEl===""){

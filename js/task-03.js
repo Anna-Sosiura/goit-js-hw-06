@@ -14,31 +14,15 @@ const images = [
 ];
 
 const imagesEl=document.querySelector('ul.gallery');
-const elements=images.map(option => {
-    const itemEl=document.createElement('li');
-    const imageEl=document.createElement('img');
+const elements=images.map(image => `<li> <img src=${image.url}
+    width='300px';
+    alt='${image.alt}'>
+    </img>
+    </li>`).join('');
 
-    imageEl.classList.add('image');
-    imageEl.src=option.url;
-    imageEl.alt=option.alt;
-    imageEl.width=400;
-    itemEl.appendChild(imageEl);
-    return itemEl;
-})
-imagesEl.append(...elements);
 console.log(elements);
 
+imagesEl.insertAdjacentHTML("beforebegin", elements);
 
 
-
-// imagesEl.insertAdjacentHTML("beforebegin", ...elements);
-// const elements=[];
-//   for (let i = 0; i < ingredients.length; i += 1) {
-//     const option=ingredients[i];
-//     const itemEl=document.createElement('li');
-//     itemEl.classList.add('item');
-//     itemEl.textContent=option;
-//     elements.push(itemEl);
-//     ingredientsEl.append(...elements);
-//   }
   
