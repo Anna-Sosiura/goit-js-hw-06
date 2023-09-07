@@ -13,5 +13,8 @@ const login={
     email:email.value,
     password:password.value,
 }
+
+console.dir(login);
+// console.log(login);
 event.currentTarget.reset();
 }
